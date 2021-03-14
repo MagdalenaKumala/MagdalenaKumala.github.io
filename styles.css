@@ -60,34 +60,6 @@ body {
 }
 
 
-.resume .resume_item {
-  padding: 25px 0;
-  border-bottom: 2px solid #CC6633;
-}
-
-.resume .resume_left .resume_item:last-child,
-.resume .resume_right .resume_item:last-child {
-  border-bottom: 0px;
-}
-
-.resume .resume_left ul li {
-  display: flex;
-  margin-bottom: 10px;
-  align-items: center;
-}
-
-.resume .resume_left ul li:last-child {
-  margin-bottom: 0;
-}
-
-
-.resume .icon i,
-.resume .resume_right .resume_hobby ul li i {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 
 .resume .resume_left ul li .data {
   color: #FFFFFF;
