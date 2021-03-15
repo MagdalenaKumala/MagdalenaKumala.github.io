@@ -59,6 +59,10 @@ body {
   color: #FFFFFF;
 }
 
+.resume .resume_left ul li .data {
+  color: #FFFFFF;
+}
+
 .resume .resume_left .resume_social .semi-bold {
   color: #fff;
   margin-bottom: 3px;
