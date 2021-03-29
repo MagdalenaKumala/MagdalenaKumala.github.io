@@ -1,9 +1,9 @@
-body {
+.results {
     min-height: 100%;
     position: relative;
 }
 
-#topbar {
+.results #topbar {
     display: flex;
     height: 64px;
     width: 100%;
@@ -12,30 +12,30 @@ body {
     background-color: white;
 }
 
-#logo {
+.results #logo {
     height: 45px;
     padding: 0px 28px 10px 30px;
     cursor: pointer;
 }
 
-html, body {
+.results html, body {
     margin: 0;
     padding: 0;
     height: auto;
 }
 
-#searchbarbutton svg {
+.results #searchbarbutton svg {
     height: 25px;
     width: 35px;
     position: relative;
     left: -3px;
 }
 
-#searchbarbutton svg path {
+.results #searchbarbutton svg path {
     fill: #ffffff
 }
 
-#searchbar {
+.results #searchbar {
     width: 625px;
     height: 45px;
     border-radius: 100px;
@@ -50,11 +50,11 @@ html, body {
     z-index: 100;
 }
 
-#searchbar:hover {
+.results #searchbar:hover {
     box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
 }
 
-#searchbar > input {
+.results #searchbar > input {
     height: 45px;
     border-style: none;
     font-size: 16px;
@@ -63,20 +63,20 @@ html, body {
     flex: 1;
 }
 
-#searchbar > input:focus {
+.results #searchbar > input:focus {
     outline: none;
 }
 
-#searchbar button {
+.results #searchbar button {
     border: none;
     cursor: pointer;
 }
 
-#searchbar button:focus {
+.results #searchbar button:focus {
     outline: none;
 }
 
-#boxesicon {
+.results #boxesicon {
     width: 25px;
     height: 25px;
     background-image: url('images/boxes.png');
@@ -87,7 +87,7 @@ html, body {
     bottom: 14px;
 }
 
-#optionsmenuactive::after {
+.results #optionsmenuactive::after {
     content: '';
     display: block;
     position: absolute;
@@ -99,21 +99,21 @@ html, body {
 }
 
 
-#searchresultsarea {
+.results #searchresultsarea {
     margin-left: 150px;
     font-family: 'Arial';
 }
 
-#searchresultsnumber {
+.results #searchresultsnumber {
     font-size: 0.8rem;
     color: gray;
 }
 
-.searchresult {
+.results .searchresult {
     margin-left: 8px;
 }
 
-.searchresult h2 {
+.results .searchresult h2 {
     font-size: 19px;
     line-height: 18px;
     font-weight: normal;
@@ -122,14 +122,14 @@ html, body {
     margin-top: 0px;
 }
 
-.searchresult a {
+.results .searchresult a {
     font-size: 14px;
     line-height: 14px;
     color: green;
     margin-bottom: 0px;
 }
 
-.searchresult button {
+.results .searchresult button {
     font-size: 10px;
     line-height: 14px;
     color: green;
@@ -139,7 +139,7 @@ html, body {
     background-color: white;
 }
 
-#bellicon {
+.results #bellicon {
     width: 20px;
     height: 20px;
     background-color: rgb(105, 105, 105);
@@ -153,7 +153,7 @@ html, body {
     bottom: 18px;
 }
 
-#signup {
+.results #signup {
     border-radius: 200px;
     width: 150px;
     height: 45px;
@@ -162,7 +162,7 @@ html, body {
     bottom: 12px;
 }
 
-#optionsbar {
+.results #optionsbar {
     width: 100%;
     height: 50px;
     border-width: 0px;
@@ -177,7 +177,7 @@ html, body {
     padding-top: 64px;
 }
 
-#optionsmenu1 {
+.results #optionsmenu1 {
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -186,32 +186,32 @@ html, body {
     margin-left: 150px;
 }
 
-#optionsmenu1 li {
+.results #optionsmenu1 li {
     padding: 0px 10px 15px 20px;
 }
 
-#optionsmenuactive {
+.results #optionsmenuactive {
     color: #4285F4;
     font-weight: bold;
     position: relative;
     z-index: -1;
 }
 
-.searchresult p {
+.results .searchresult p {
     width: 625px;
     font-size: 13px;
     margin-top: 0px;
     color: rgb(82, 82, 82);
 }
 
-.relatedsearches h3 {
+.results .relatedsearches h3 {
     font-weight: normal;
     font-size: 19px;
     margin-top: 40px;
     margin-bottom: 10px;
 }
 
-.relatedlists ul {
+.results .relatedlists ul {
     list-style: none;
     color: rgb(29, 1, 189);
     padding-left: 0px;
@@ -219,18 +219,18 @@ html, body {
     margin-bottom: 50px;
 }
 
-.relatedlists {
+.results .relatedlists {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 300px;
 }
 
-.relatedlists ul li {
+.results .relatedlists ul li {
     margin-bottom: 8px;
 }
 
-.pagelist {
+.results .pagelist {
     list-style: none;
     color: rgb(29, 135, 255);
     display: flex;
@@ -240,7 +240,7 @@ html, body {
     margin-left: 100px;
 }
 
-.pagelistprevious::before {
+.results .pagelistprevious::before {
     content: '<';
     display: block;
     position: absolute;
@@ -251,7 +251,7 @@ html, body {
     transform: scale(0.7, 1.2);
 }
 
-.pagelistprevious::after {
+.results .pagelistprevious::after {
     content: '';
     display: block;
     position: absolute;
@@ -264,12 +264,12 @@ html, body {
     background-size: 28px;
 }
 
-.pagelistfirst {
+.results .pagelistfirst {
     margin-left: 20px;
     font-size: 13px;
 }
 
-.pagelistnumber::before, .pagelistfirst::before {
+.results .pagelistnumber::before, .pagelistfirst::before {
     content: '';
     display: block;
     position: absolute;
@@ -282,7 +282,7 @@ html, body {
     z-index: 3;
 }
 
-.pagelistnumber::after {
+.results .pagelistnumber::after {
     content: '';
     display: block;
     position: absolute;
@@ -295,7 +295,7 @@ html, body {
     z-index: 2;
 }
 
-.pagelistfirst::after {
+.results .pagelistfirst::after {
     content: '';
     display: block;
     position: absolute;
@@ -308,17 +308,17 @@ html, body {
     z-index: 2;
 }
 
-.pagelist li {
+.results .pagelist li {
     margin-right: 15px;
     position: relative;
 }
 
-.pagelistnext {
+.results .pagelistnext {
     margin-left: 40px;
     font-size: 13px;
 }
 
-.pagelistnext::before {
+.results .pagelistnext::before {
     content: '>';
     display: block;
     position: absolute;
@@ -329,7 +329,7 @@ html, body {
     transform: scale(0.7, 1.2);
 }
 
-.pagelistnext::after {
+.results .pagelistnext::after {
     content: '';
     display: block;
     position: absolute;
@@ -343,7 +343,7 @@ html, body {
 }
 
 
-#footer {
+.results #footer {
     background-color: rgb(238, 238, 238);
     position: relative;
     left: 0px;
@@ -354,7 +354,7 @@ html, body {
     color: rgb(85, 85, 85);
 }
 
-#footermenu {
+.results #footermenu {
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -364,11 +364,11 @@ html, body {
     padding-bottom: 10px;
 }
 
-#footermenu li {
+.results #footermenu li {
     padding-right: 30px;
 }
 
-#footerlocation {
+.results #footerlocation {
     display: flex;
     direction: row;
     margin-left: 175px;
@@ -376,6 +376,16 @@ html, body {
     top: -5px;
 }
 
-#footerlocation p:nth-of-type(1) {
+.results #footerlocation p:nth-of-type(1) {
     font-weight: bold;
+}
+
+.results nav{
+	display: none;
+}
+.results .section-1{
+	display: none;
+}
+.results footer{
+	display: none;
 }
