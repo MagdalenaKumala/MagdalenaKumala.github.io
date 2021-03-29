@@ -533,7 +533,7 @@ body.home {
 .result#footermenu li {
     padding-right: 30px;
 }
-
+.results(.home) display none
 .result#footerlocation1 {
     display: flex;
     direction: row;
