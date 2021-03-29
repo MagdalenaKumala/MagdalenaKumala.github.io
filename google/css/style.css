@@ -163,3 +163,21 @@ body.home {
 .home .link-3 {
 	padding-right: 18.7px;
 }
+.home #topbar{
+    display: none;
+}
+.home #optionsmenuactive::after{
+    display: none;
+}
+.home #optionsbar{
+	display: none;
+}
+.home #optionsmenu2 {
+    display: none;
+}
+.home #footer {
+    display: none;
+}
+.home #searchresultsarea {
+    display: none;
+}
