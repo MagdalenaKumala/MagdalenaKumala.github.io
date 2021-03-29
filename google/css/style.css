@@ -167,7 +167,7 @@ body.home {
 	display: none
 }
 
-.resultbody1 {
+body1.result {
     min-height: 100%;
     position: relative;
 }
