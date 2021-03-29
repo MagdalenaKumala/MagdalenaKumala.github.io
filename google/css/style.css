@@ -546,6 +546,9 @@ body.home {
     font-weight: bold;
 }
 
-.result(.home) {
+.result(body.home) {
+	display: none
+}
+.result(.homediv) {
 	display: none
 }
