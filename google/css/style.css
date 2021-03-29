@@ -163,8 +163,11 @@ body.home {
 .home.link-3 {
 	padding-right: 18.7px;
 }
+.home(body1.result) {
+	display: none
+}
 
-.resultsbody1 {
+.resultbody1 {
     min-height: 100%;
     position: relative;
 }
