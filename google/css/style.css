@@ -163,9 +163,6 @@ body.home {
 .home.link-3 {
 	padding-right: 18.7px;
 }
-.home(body1.result) {
-	display: none
-}
 
 body1.result {
     min-height: 100%;
@@ -547,11 +544,4 @@ body1.result {
 
 .result#footerlocation p:nth-of-type(1) {
     font-weight: bold;
-}
-
-.result(body.home) {
-	display: none
-}
-.result(.homediv) {
-	display: none
 }
