@@ -533,7 +533,7 @@ body.home {
 .result#footermenu li {
     padding-right: 30px;
 }
-.results(.home) display none
+
 .result#footerlocation1 {
     display: flex;
     direction: row;
@@ -544,4 +544,8 @@ body.home {
 
 .result#footerlocation p:nth-of-type(1) {
     font-weight: bold;
+}
+
+.result(.home) {
+	display: none
 }
