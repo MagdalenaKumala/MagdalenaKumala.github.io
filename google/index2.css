@@ -1,0 +1,377 @@
+div.results {
+    min-height: 100%;
+    position: relative;
+}
+
+.results #topbar {
+    display: flex;
+    height: 64px;
+    width: 100%;
+    align-items: flex-end;
+    position: fixed;
+    background-color: white;
+}
+.results #right-side button{
+    border: 1px solid #4285f4;
+    font-weight: bold;
+    outline: none;
+    background: #4285f4;
+    color: #fff;
+    padding: 7px 20px;
+    border-radius: 3px;
+    margin-right: 7px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    position: absolute;
+    right: 25px;
+    top: 20px;
+}
+.results #right-side img {
+	width: 34px;
+	padding: 5px;
+	cursor: pointer;
+    margin: auto 15px;
+    position: absolute;
+    right: 165px;
+    top: 15px;
+}
+.results #right-side img:hover {
+	opacity: .8;
+}
+.results #boxesicon {
+    width: 25px;
+    height: 25px;
+    opacity: 0.6;
+    background-size: 26px;
+    position: relative;
+    right: 130px;
+    bottom: 14px;
+}
+.results #searchbarimage {
+    height: 30px;
+    padding: 0px 28px 10px 30px;
+    cursor: pointer;
+}
+
+.results html, body {
+    margin: 0;
+    padding: 0;
+    height: auto;
+}
+
+.results #searchbarmic {
+    height: 45px;
+    width: 35px;
+    margin-left: auto;
+    background-color: white;
+}
+
+.results #searchbarmic img {
+    height: 25px;
+}
+
+.results #searchbarbutton {
+    height: 45px;
+    width: 55px;
+    position: relative;
+    margin-right: -2px;
+    background-color: white;
+}
+
+.results #searchbarbutton svg {
+    height: 25px;
+    width: 35px;
+    position: relative;
+    left: -3px;
+}
+
+.results #searchbarbutton svg path {
+    fill: #4285F4
+}
+
+.results #searchbar {
+    width: 625px;
+    height: 45px;
+    border-radius: 100px;
+    border-color: lightgray;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 16px;
+    position: relative;
+    bottom: 5px;
+    overflow: hidden;
+    display: flex;
+    z-index: 100;
+}
+
+.results #searchbar:hover {
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+}
+
+.results #searchbar > input {
+    height: 45px;
+    border-style: none;
+    font-size: 16px;
+    line-height: 45px;
+    padding-left: 20px;
+    flex: 1;
+}
+
+.results #searchbar > input:focus {
+    outline: none;
+}
+
+.results #searchbar button {
+    border: none;
+    cursor: pointer;
+}
+
+.results #searchbar button:focus {
+    outline: none;
+}
+
+.results #optionsmenuactive::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #4285F4;
+    left: 5px;
+    bottom: 0px;
+}
+
+.results #optionsmenu2 {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 100px;
+}
+
+.results #optionsmenu2 li {
+    padding: 0px 10px 15px 20px;
+}
+
+.results #searchresultsarea {
+    margin-left: 150px;
+    font-family: 'Arial';
+}
+
+.results #searchresultsnumber {
+    font-size: 0.8rem;
+    color: gray;
+}
+
+.results .searchresult {
+    margin-left: 8px;
+}
+.results .searchresult p{
+    margin-bottom: 4px;
+}
+
+.results .searchresult h2 {
+    font-size: 19px;
+    line-height: 18px;
+    font-weight: normal;
+    color: rgb(29, 1, 189);
+    margin-bottom: 0px;
+    margin-top: 25px;
+}
+
+.results .searchresult a {
+    font-size: 14px;
+    line-height: 14px;
+    color: green;
+    margin-bottom: 0px;
+}
+.results .searchresult button {
+    font-size: 10px;
+    line-height: 14px;
+    color: green;
+    margin-bottom: 0px;
+    padding: 0px;
+    border-width: 0px;
+    background-color: white;
+}
+
+.results #profileimage {
+    border-radius: 50px;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    right: 40px;
+    bottom: 12px;
+}
+
+.results #optionsbar {
+    width: 100%;
+    height: 50px;
+    border-width: 0px;
+    border-bottom: 1px;
+    border-color: lightgray;
+    border-style: solid;
+    display: flex;
+    align-items: flex-end;
+    font-family: 'Arial';
+    font-size: 13px;
+    color: rgb(112, 112, 112);
+    padding-top: 64px;
+}
+
+.results #optionsmenu1 {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 150px;
+}
+
+.results #optionsmenu1 li {
+    padding: 0px 10px 15px 20px;
+}
+
+.results #optionsmenuactive {
+    color: #4285F4;
+    font-weight: bold;
+    position: relative;
+    z-index: -1;
+}
+
+.results .searchresult p {
+    width: 625px;
+    font-size: 13px;
+    margin-top: 0px;
+    color: rgb(82, 82, 82);
+}
+
+.results .relatedsearches h3 {
+    font-weight: normal;
+    font-size: 19px;
+    margin-top: 40px;
+    padding-left: 140px;
+    margin-bottom: 10px;
+}
+
+.results .relatedlists ul {
+    list-style: none;
+    color: rgb(29, 1, 189);
+    padding-left: 0px;
+    font-size: 14px;
+    margin-bottom: 50px;
+}
+
+.results .relatedlists {
+    display: flex;
+    padding-left: 100px;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 300px;
+}
+
+.results .relatedlists ul li {
+    margin-bottom: 8px;
+}
+
+.results table.pagelist {
+   
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    letter-spacing: -0.12em;
+    font-size: 2.3em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    margin-left: 150px;
+}
+
+.results .pagenr {
+    font-size: 12px;
+    color: rgb(50, 93, 246);
+    letter-spacing: normal;
+    text-align: center;
+    cursor: pointer;
+}
+
+.results .next{
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: -50px;
+    color:rgb(0, 3, 166);
+    cursor: pointer;
+}
+
+.results .pagenr:hover{
+    text-decoration: underline;
+}
+
+.results .blue {
+    color: #518dee;
+}
+
+.results .red {
+    color: rgb(241, 46, 46);
+}
+
+.results .green {
+    color: rgb(49, 177, 37);
+}
+
+.results .yellow {
+    color: rgb(247, 200, 59);
+}
+
+.results .pagelist .pagenr {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+
+.results #footer {
+    background-color: rgb(238, 238, 238);
+    position: relative;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    font-size: 13px;
+    font-family: 'arial';
+    color: rgb(85, 85, 85);
+}
+
+.results #footermenu {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin-top: 0px;
+    margin-left: 135px;
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+}
+
+.results #footermenu li {
+    padding-right: 30px;
+}
+
+.results #footerlocation {
+    display: flex;
+    direction: row;
+    margin-left: 175px;
+    position: relative;
+    top: -5px;
+}
+
+.results #footerlocation p:nth-of-type(1) {
+    font-weight: bold;
+}
+
+.results nav{
+	display: none;
+}
+.results .section-1{
+	display: none;
+}
+.results footer{
+	display: none;
+}

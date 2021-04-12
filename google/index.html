@@ -2,36 +2,32 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Google</title>
-	<link rel="icon"  href="favicon.ico">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script src="vue.js" defer></script>
-	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+	<title>Wyszukiwarka Google</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" type="text/css" href="index2.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
-	<!-- dla homepage -->
-	<!--
-<body class="home">
-	-->
-<body class="results">
-
-	<!-- homepage -->
+	
 <body>
+    <div id="app" :class="[googleSearch.length > 0 ? 'results' : 'home']">
+	<!-- Strona główna -->
       <nav>
       	<a href="#">Gmail</a>
       	<a href="#">Grafika</a>
-      	<img src="img/g-menu.PNG">
-
+      	<img src="bar.png">
       	<button>Zaloguj się</button>
       </nav>
       <section class="section-1">
-      	<img src="img/logo.png" class="logo">
+      	<img src="logo.png" class="logo">
       	<form><br><br>
       		<div class="s-box">
-      			<img src="img/search.svg" class="search-icon">
-      			<input type="text" class="s-input">
-      			<img src="img/vs.png" class="vs-icon">
+      			<img src="search.svg" class="search-icon">
+      			<input v-model="googleSearch" type="text" class="search_input">
+                <img src="klawiatura.png" class="keyboard-icon">
+      			<img src="mikrofon.png" class="vs-icon">
       			<input type="submit" class="s-btn" value="Szukaj w Google">
       			<input type="submit" class="s-btn" value="Szczęśliwy traf">
+      		</div>
       	</form>
       </section>
       <footer>
@@ -41,158 +37,190 @@
       			<a href="#">O nas</a>
       			<a href="#">Reklamuj się</a>
       			<a href="#">Dla firm</a>
-      			<a href="#">Jak działa wyszukiwarka?</a>
+      			<a href="#">Jak działa wyszukiwarka</a>
       		</div>
-		<div class="link-2">
-			<img src="img/listek.PNG">
-      			<a href="#">Neutralność węglowa od 2007 roku</a>
-      		</div>
-      		<div class="link-3">
+              <div class="link-0">
+                <img src="listek.png" class="leaf-icon">
+                <a href="#">Neutralność węglowa od 2007 roku</a>
+            </div>
+      		<div class="link-2">
       			<a href="#">Prywatność</a>
       			<a href="#">Warunki</a>
       			<a href="#">Ustawienia</a>
       		</div>
       	</div>
       </footer>
+      
 
-<!-- results -->
-    <div id="header">
+
+	  <!-- Wyniki wyszukiwania -->
+	  <div id="header">
         <div id="topbar">
-            <img id="logo" src="img/logo.png" />
+            <img id="searchbarimage" src="logo.png" />
             <div id="searchbar" type="text">
-		<input v-model="message" placeholder=" ">
+                <input id="searchbartext" type="text" value="Nightwish" />
+                <button id="searchbarmic">
+                    <img src="mikrofon.png" />
+                </button>  
                 <button id="searchbarbutton">
-                    <img id="search" src="img/search1.png" />
-                </button>
+                    <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                        </path>
+                    </svg>
+                </button>         
             </div>
-
-            <div id="boxesicon"></div>
-            <div id="bellicon"></div>
-            <img id="signup" src="img/zaloguj.png" />
+            
+            <div id="right-side">
+            <img src="bar.png">
+            <button>Zaloguj się</button>
+        </div>
         </div>
         <div id="optionsbar">
             <ul id="optionsmenu1">
                 <li id="optionsmenuactive">Wszystko</li>
-                <li>Grafika</li>
                 <li>Wideo</li>
+                <li>Grafika</li>
+                <li>Książki</li>
                 <li>Wiadomości</li>
-                <li>Mapy</li>
                 <li>Więcej</li>
-		<li>Ustawienia</li>
-		<li>Narzędzia</li>
+            </ul>
+
+            <ul id="optionsmenu2">
+                <li>Ustawienia</li>
+                <li>Narzędzia</li>
             </ul>
         </div>
     </div>
     <div id="searchresultsarea">
-        <p id="searchresultsnumber">Około 71 800 000 wyników (0,48 s)</p>
-        <div class="searchresult">
-	    <a>https://pl.wiktionary.org/wiki/rezultat</a> <button>▼</button>
-            <h2>rezultat – Wikisłownik, wolny słownik wielojęzyczny</h2>
-            <p><b>rezultat </b>(język polski)Edytuj. wymowa: IPA: [rɛˈzultat], AS: [<b>rezultat</b>] ​. znaczenia: rzeczownik,
-	    rodzaj męskorzeczowy. (1.1) wynik, skutek, efekt jakiegoś ...</p>
-        </div>
+        <p id="searchresultsnumber">Około 8 990 000 wyników (0,65 s) </p>
+            <div class="searchresult">
+                <h2>Nightwish – Wikipedia, wolna encyklopedia</h2>
+                <a>https://pl.wikipedia.org/</a> <button>▼</button>
+                <p>Nightwish – fińska grupa założona w 1996 roku. Styl grupy wyróżniał żeński wokal w postaci <br>
+                    operowego głosu Tarji Turunen (pięć pierwszych albumów), ...</p>
+            </div>
 
-        <div class="searchresult">
-	    <a>https://sjp.pwn.pl/slowniki/rezultat</a> <button>▼</button>
-            <h2>rezultat - definicja, synonimy, przykłady użycia</h2>
-            <p><b>rezultat </b>- definicja, synonimy, przykłady użycia. ... w <b>rezultacie</b> «w końcu, ostatecznie» ... Kliknij, aby zobaczyć „<b>rezultat</b>” w Korpusie Języka Polskiego PWN ...</p>
-        </div>
+            <div class="searchresult">
+                <h2>Nightwish | Facebook</h2>
+                <a>https://www.facebook.com/nightwish</a> <button>▼</button>
+                <p><b>Nightwish</b>. 4 212 240 osób lubi to · 25 985 osób mówi o tym. The official Facebook page of the <br>
+                    Finnish symphonic metal band, Nightwish.</p>
+            </div>
 
-         <div class="searchresult">
-	    <a>https://www.slownik.one/rezultat</a> <button>▼</button>
-            <h2>Definicja I Znaczenie Rezultat - Słownik.one</h2>
-            <p>Co znaczy <b>rezultat </b>?...Możesz również dodać swoją deninicję słowa <b>rezultat</b> ... (1.1) wynik, skutek, efekt jakiegoś działania | (1.1) "<b>Rezultatem</b> wypadku były...</p>
-        </div>
+            <div class="searchresult">
+                <h2>An Evening With Nightwish In A Virtual World</h2>
+                <a>https://www.nightwish.com/</a> <button>▼</button>
+                <p>Nightwish – one of the world's leading symphonic metal bands and Finland's most successful<br>
+                    music export – sets the stage for an exquisite interactive ...</p>
+            </div>
 
-        <div class="searchresult">
-	    <a>https://www.synonimy.pl/synonim/rezultat</a> <button>▼</button>
-            <h2>Synonimy słowa "rezultat" - Synonimy.pl</h2>
-            <p>Synonimy do słowa<b>rezultat </b>:1. wynik, skutek, sfekt, implikacja, następstwo, konsekwencja, produkt, twór, owoc, plon, pokłoisie, żniwo, płód, wypadkowa.</p>
-        </div>
+            <div class="searchresult">
+                <h2>Nightwish (@NightwishBand) | Twitter</h2>
+                <a>https://twitter.com/nightwishband</a> <button>▼</button>
+                <p>The latest Tweets from Nightwish (@NightwishBand). #symphonicmetal #metal An Evening<br>
+                    With Nightwish in a Virtual World - Tickets now available!</p>
+            </div>
 
-        <div class="searchresult">
-	    <a>https://pl.glosbe.com/słownik polsko-polski</a> <button>▼</button>
-            <h2>rezultat - polsku: definicja, gramatyka, wymowa, synonimy i ...</h2>
-            <p><b>rezultat</b> m. <rezultat</b> m inan ;; declension of <b>rezultat</b>. sungular, plural. nominative, <b>rezultat</b>, <b>rezultaty</b>. genitive, <b>rezultatu</b> ...
-	    </p>
-        </div>
+            <div class="searchresult">
+                <h2>Nightwish | Spotify</h2>
+                <a>https://open.spotify.com/artist/2NPduAUeLVsfIauhRwuft1</a> <button>▼</button>
+                <p>Finland's Nightwish are an award-winning, best-selling symphonic metal band fronted by Floor<br>
+                    Jansen, their third female vocalist. While they're hardly the first ...</p>
+            </div>
 
-        <div class="searchresult">
-	    <a>https://pl.bab.la/slownik/polski-angielski/rezultat</a> <button>▼</button>
-            <h2>REZULTAT - Tłumaczenie na anglieski - bab.la</h2>
-            <p>W <b>rezultacie</b> okazuje się, że nieważna jest tutaj sprawa klimatu, a interesy. expand_more IT looks as if the issue of climate change is not what is important here, just ...
-	    </p>
-        </div>
+            <div class="searchresult">
+                <h2>Nightwish - Eventim</h2>
+                <a>https://www.eventim.pl/artist/nightwish/</a> <button>▼</button>
+                <p>Zobacz wszystkie wydarzenia Nightwish, bilety oraz daty koncertów na Eventim. Na Eventim<br>
+                    znajdziesz wszystkie informacje o Nightwish.</p>
+            </div>
 
-        <div class="searchresult">
-	    <a>https://synonim.net/synonim/rezultat</a> <button>▼</button>
-            <h2>Synonim rezultat • Słownik synonimów do słowa rezultat ... </h2>
-            <p>Słowo <b>rezultat</b> posiada 109 synonimów w słowniku synonimów. Synonimy słowa <b>rezultat</b>: wynik, efekt, owoc, osiągnięcie, plon, wytwór, produkt, zysk, płód, ...
-	    </p>
-        </div>
-
-        <div class="searchresult">
-	    <a>https://dictionary.cambridge.org/polish-english/rezu...</a> <button>▼</button>
-            <h2>rezultat|definicja ze z słownika polsko-angielskiego ... </h2>
-            <p>17 mar 2021 - Nowa metoda nie przyniosła oczekiwanych <b>rezultatów</b>. The new method did not bring the expected results. (Tłumaczenie <b>rezultat</b> z ...
-	    </p>
-        </div>
-
-        <div class="searchresult">
-	    <a>https://sjp.pl/rezultat</a> <button>▼</button>
-            <h2>rezultat - Słownik SJP </h2>
-            <p><b>rezultat</b>. dopuszczalne w grach (i). <b>rezultat ... N, <b>rezultatach</b>,<b>rezultatami</b>, <b>rezultatom</b>. Q, <b>rezultacie</b>, <b>rezultatem</b>, <b>rezultatowi</b>, <b>rezultatu</b>. T, <b>rezultatów</b>. s, <b>rezultaty</b>.
-	    </p>
-        </div>
-
-        
+            <div class="searchresult">
+                <h2>O sensie życia (wywiad z Nightwish) - Muzyka w INTERIA.PL</h2>
+                <a>https://muzyka.interia.pl/</a> <button>▼</button>
+                <p>Holenderka Floor Jansen dołączyła do Nightwish w dramatycznych okolicznościach w<br>
+                    zpaździerniku 2012 roku - w połowie trasy po Stanach Zjednoczonych, kiedy ...</p>
+            </div>
         <div class="relatedsearches">
             <h3>Podobne wyszukiwania</h3>
             <div class="relatedlists">
                 <ul class="relatedleft">
-                    <li><b>rezultat, inaczej</b></li>
-                    <li><b>rezultat kryżówka</b></li>
-                    <li><b>Co to jest</b> rezultat</li>
-                    <li><b>Wynik, </b> rezultat <b>działań krzyżówka</b></li>
+                  <li><b>Nightwish Human. Nature</b></li>
+                  <li>nightwish <b>-- human. :||: nature</b></li>
+                  <li><b>Floor Jansen</b></li>
+                  <li><b>Nightwish - Ghost Love Score</b></li>
                 </ul>
                 <ul class="relatedright">
-                    <li><b>Nazwa rezultatu</b></li>
-                    <li><b>Rezultat po angielsku</b></li>
-                    <li><b>Efekt a</b> rezultat</li>
-                    <li><b>Końcowy</b> rezultat</li>
+                  <li><b>Nightwish Sleeping Sun</b></li>
+                  <li><b>Nightwish Elan</b></li>
+                  <li><b>Nightwish Wishmaster</b></li>
+                  <li><b>Anette Olzon</b></li>
                 </ul>
             </div>
         </div>
 
-        <div class="pagebar">
-            <ul class="pagelist">
-                <li class="pagelistfirst">1</li>
-                <li class="pagelistnumber">2</li>
-                <li class="pagelistnumber">3</li>
-                <li class="pagelistnumber">4</li>
-                <li class="pagelistnumber">5</li>
-                <li class="pagelistnumber">6</li>
-                <li class="pagelistnumber">7</li>
-                <li class="pagelistnumber">8</li>
-                <li class="pagelistnumber">9</li>
-                <li class="pagelistnumber">10</li>
-                <li class="pagelistnext">Następna</li>
-            </ul>
+          <table class="pagelist">
+            <tr>
+              <td><span class="blue">G</span></td>
+              <td><span class="red">o</span></td>
+              <td><span class="yellow">o</span></td>
+              <td><span class="yellow">o</span></td>
+              <td><span class="yellow">o</span></td>
+              <td><span class="yellow">o</span></td>
+              <td><span class="yellow">o</span></td>
+              <td><span class="yellow">o</span></td>
+              <td><span class="yellow">o</span></td>
+              <td><span class="yellow">o</span></td>
+              <td><span class="yellow">o</span></td>
+              <td><span class="blue">g</span></td>
+              <td><span class="green">l</span></td>
+              <td><span class="red">e</span></td>
+              <td rowspan="2" style="width: 10px;"></td>
+              <td><span class="next">></span></td>
+            </tr>
+
+            <tr>
+                <td class="pagenr"></td>
+                <td class="pagenr" style="color: black; cursor: text;">1</td>
+                <td class="pagenr">2</td>
+                <td class="pagenr">3</td>
+                <td class="pagenr">4</td>
+                <td class="pagenr">5</td>
+                <td class="pagenr">6</td>
+                <td class="pagenr">7</td>
+                <td class="pagenr">8</td>
+                <td class="pagenr">9</td>
+                <td class="pagenr">10</td>
+                <td colspan="3"></td>
+                <td class="pagenr">Następna</td>
+              </tr>
         </div>
     </div>
 
-    <div id="footer1">
-        <div id="footerlocation1">
-            <p>Polska</p>
-            <p> <b>  31-146, Kraków </b> - Z Twoich miejsc (dom) - Użyj dokładnej lokalizacji - Dowiedz się więcej</p>
+    <div id="footer">
+        <div id="footerlocation">
+            <p>Polska </p>
+            <p> - Z Twojej historii lokalizacji - Użyj dokładnej lokalizacji - Dowiedz się więcej</p>
         </div>
 
-        <ul id="footermenu1">
+        <ul id="footermenu">
             <li>Pomoc</li>
             <li>Prześlij opinię</li>
             <li>Prywatność</li>
             <li>Warunki</li>
         </ul>
     </div>
+
+
+
 </body>
+<script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        googleSearch: '',
+      }
+    });
+  </script>
 </html>
