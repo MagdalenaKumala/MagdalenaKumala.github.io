@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="index.css">
 	<link rel="stylesheet" type="text/css" href="index2.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<script src="./cities.js"></script>
 </head>
 	
 <body>
@@ -94,6 +95,14 @@
     </div>
     <div id="searchresultsarea">
         <p id="searchresultsnumber">Około 8 990 000 wyników (0,65 s) </p>
+	    <div class="cities">
+           <a class="link"><b>Lista miast:</b></a>
+          <ul>
+            <li v-for="city in filteredCities">
+              {{ city.name }}
+            </li>
+          </ul>
+        </div>
             <div class="searchresult">
                 <h2>Nightwish – Wikipedia, wolna encyklopedia</h2>
                 <a>https://pl.wikipedia.org/</a> <button>▼</button>
@@ -216,11 +225,37 @@
 
 </body>
 <script>
-    var app = new Vue({
-      el: '#app',
-      data: {
-        googleSearch: '',
+  var app = new Vue({
+    el: '#app',
+    data: {
+      googleSearch: '',
+      cities: window.cities,
+    },
+
+    computed: {
+      filteredCities: function() {
+        let result = this.cities.filter(city => city.name.includes(this.googleSearch));
+        if(result.length>10){
+          return result.slice(1,11);
+        }
+        return result;
       }
-    });
-  </script>
+    },
+
+    updated() {
+        this.$nextTick(() => {
+
+        if (this.googleSearch.length > 0) {
+
+        this.$refs.second.focus();
+
+        } else {
+
+        this.$refs.first.focus();
+
+        }
+      })
+    }
+});
+</script>
 </html>
