@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <title>Google</title>
     <link rel="icon" href="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-google-icon-logo-png-transparent-svg-vector-bie-supply-14.png">
-    <link rel="stylesheet" type="text/css" href="newstyle.css">
-    <link rel="stylesheet" type="text/css" href="newstyleresults.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="autocompleter.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="./cities.js"></script>
     <script src="autocompleter.js"></script>
@@ -36,16 +36,7 @@
                         <img class="ikona_input-mikrofon" src="mikrofon.png"/>
                         <button id="przycisk_szukaj"><img class="ikona_input" src="lupa_niebieska.png"/></button>
                     </div>
-                    <div  id="wypisz_miasta" class="miasta_lista" :class="{widok : googleSearch.length > 0 /*&& skupienie*/ && filtrowaneMiasta.length>0}" >
-                        <ul >
-                            <li  v-for="(miasto,index) in filtrowaneMiasta" >
-                                <div class="lista_elementow" :class="{klasa_skupienie:index == zaznaczenie}">
-                                    <img class="ikona_input" src="lupa.png" />
-                                    <a href="#" v-html="wytluszcz(miasto)" v-on:click="wybrane(index)"><b>{{ miasto }}</b></a>  
-                                </div>
-                            </li>
-                        </ul>
-                    </div> 
+                   <v-autocompleter v-model="googleSearch" :options="cities" @enter="showResults"></v-autocompleter>
                 </section>
             </div>
 
@@ -416,14 +407,11 @@
         {
         el: '#start',
         data: {
-            googleSearch: '',
-            searchedInput:'',
+            enterValues: [],
             filtrowaneMiasta:"",
             cities: window.cities,
-            filtrowane_miasta_aktualizacja:true,
-            skupienie: false,
-            zmiana: false,
-            zaznaczenie: -1,
+            isActive: 0,
+     	    googleSearch: '',
         },
         updated()
          {
@@ -457,75 +445,18 @@
                 }
             }
         },
-        methods:
-        {
-            enter() 
-            {
-                this.filtrowaneMiasta=true;
-                this.zmiana= true;
-                this.zaznaczenie=-1;
-                this.skupienie = false;
-             },
-            dol()
-            {
-                if(this.zaznaczenie<this.filtrowaneMiasta.length-1)
-                {
-                    this.zaznaczenie+=1; 
-                }
-                else if(this.zaznaczenie==this.filtrowaneMiasta.length-1)
-                {
-                    this.zaznaczenie=0; 
-                }
-             },
-             gora()
-             {
-                if(this.zaznaczenie>0)
-                {
-                    this.zaznaczenie-=1; 
-                }
-                else if(this.zaznaczenie==0)
-                {
-                    this.zaznaczenie=this.filtrowaneMiasta.length-1;
-                }
-             },
-             wybrane(i)
-             {
-                this.googleSearch=this.filtrowaneMiasta[i].name;
-                this.enter();
-             },
-             aktywne()
-             {
-                if(this.googleSearch.length==0){
-                    this.zmiana=false;
-                }
-                return this.zmiana;
-             },
-             filtrowane_miasta_utworz(prawda)
-             {
-                 if(prawda)
-                 {
-                    let result=this.cities.filter(miasto => miasto.name.includes(this.googleSearch));
-                    if(result.length>10)
-                    {
-                        this.filtrowaneMiasta= result.slice(1, 11);
-                    }
-                    else{
-                        this.filtrowaneMiasta= result;
-                    }
-                    this.zaznaczenie=-1;
-                 }   
-             },
-             wytluszcz(miasto)
-            {
-                let re = new RegExp(this.searchedInput,"gi");
-                let bolden="<b>"+miasto.name.replace(re, match=>
-                    {
-                     return "<span class='zwykly'>"+ match+"</span>";
-                    })+"</b>";
-                console.log(bolden);
-                return bolden;
-            }      
-        }
+        methods:{
+             showResults(newValue) {
+      	     this.enterValues.push(newValue);
+
+      	     if (this.isActive == 0){
+             this.isActive = 1;
+      	     }
+             else{
+             this.$emit('input', '');
+             this.isActive = 0;
+             }    
+	     }
     })
 </script>
 </html>
