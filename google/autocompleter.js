@@ -86,7 +86,7 @@ Vue.component('v-autocompleter', {
                     else{
                         this.filtrowaneMiasta= result;
                     }
-                    this.zaznaczenie=-1;
+                    this.forPick = -1;
                  }   
              },
              wytluszcz(miasto)
