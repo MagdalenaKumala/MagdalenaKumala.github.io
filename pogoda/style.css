@@ -5,15 +5,9 @@ body {
   height: 100vh;
   margin: 0;
   font-family: 'Open Sans', sans-serif;
-  font-size: 120%;
-}
-.background {
   background-image: url('tło.jpg');
   background-color: #cccccc;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+  font-size: 120%;
 
 .card {
   background: #000000d0;
