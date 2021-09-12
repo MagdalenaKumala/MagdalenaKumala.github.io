@@ -4,7 +4,7 @@ body {
   align-items: center;
   height: 100%;
   margin: 0;
-  background: #222;
+  background-color: #222;
   font-family: 'Open Sans', sans-serif;
   background-image: url('https://source.unsplash.com/1600x900/?nature,water');
   font-size: 120%;
