@@ -2,10 +2,7 @@ let weather = {
     apiKey: "6de0841d48aec019f4175cfbb7a7c0f8",
     fetchWeather: function (city) {
         fetch(
-            "https://api.openweathermap.org/data/2.5/weather?q= 
-            +city
-            +&appid=
-            +this.apiKey"
+            "https://api.openweathermap.org/data/2.5/weather?q=Krakow+&appid=6de0841d48aec019f4175cfbb7a7c0f8"
         )
         .then((response) => {
             if (!response.ok) {
