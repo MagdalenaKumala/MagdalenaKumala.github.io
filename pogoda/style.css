@@ -6,7 +6,7 @@ body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   background: #222;
-  background-image: url('https://source.unsplash.com/1600x900/?landscape');
+  background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.polska.travel%2Fpl%2Fglowne-miasta%2Fkrakow&psig=AOvVaw3Ibg40j_6MdWTOnlccCdLM&ust=1631557168201000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCND5hqGG-vICFQAAAAAdAAAAABAD');
   font-size: 120%;
 }
 
@@ -78,7 +78,7 @@ h1.temp {
 
 .weather.loading:after {
   visibility: visible;
-  content: "Loading...";
+  content: "Ładowanie...";
   color: white;
   position: absolute;
   top: 0;
