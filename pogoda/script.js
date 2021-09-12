@@ -25,9 +25,9 @@ let weather = {
     document.querySelector(".description").innerText = description;
     document.querySelector(".temp").innerText = temp + "°C";
     document.querySelector(".humidity").innerText =
-      "Humidity: " + humidity + "%";
+      "Wilgotność: " + humidity + "%";
     document.querySelector(".wind").innerText =
-      "Wind speed: " + speed + " km/h";
+      "Prędkość wiatru: " + speed + " km/h";
     document.querySelector(".weather").classList.remove("loading");
     document.body.style.backgroundImage =
       "url('https://source.unsplash.com/1600x900/?" + name + "')";
@@ -49,4 +49,4 @@ document
     }
   });
 
-weather.fetchWeather("Denver");
+weather.fetchWeather("Krakow");
