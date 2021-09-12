@@ -2,7 +2,10 @@ let weather = {
     apiKey: "6de0841d48aec019f4175cfbb7a7c0f8",
     fetchWeather: function (city) {
         fetch(
-            "https://api.openweathermap.org/data/2.5/weather?q= Krakow&appid=6de0841d48aec019f4175cfbb7a7c0f8"
+            "https://api.openweathermap.org/data/2.5/weather?q= 
+            +city
+            +&appid=
+            +this.apiKey"
         )
         .then((response) => {
             if (!response.ok) {
@@ -43,7 +46,7 @@ document.querySelector(".search button").addEventListener("click", function () {
 document
     .querySelector(".search-bar")
     .addEventListener("keyup", function (event) {
-        if (event.key == "Esc") {
+        if (event.key == "Enter") {
             weather.search();
         }
     });
