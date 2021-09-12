@@ -10,8 +10,8 @@ body {
   font-size: 120%;
 
 .card {
-  background: #cccccc;
-  color: white;
+  background: #000000;
+  color: black;
   padding: 2em;
   border-radius: 30px;
   width: 100%;
